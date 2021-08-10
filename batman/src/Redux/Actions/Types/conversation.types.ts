@@ -1,0 +1,18 @@
+// Get Conversation
+export enum GetConversationActionTypes {
+  GET_CONVERSATION_REQUEST = 'GET_CONVERSATION_REQUEST',
+  GET_CONVERSATION_SUCCESS = 'GET_CONVERSATION_SUCCESS',
+  GET_CONVERSATION_FAIL = 'GET_CONVERSATION_FAIL',
+}
+
+// Select Conversation
+export enum SelectConversationActionTypes {
+  SELECT_CONVERSATION = 'SELECT_CONVERSATION',
+}
+
+// Get Messages
+export enum GetMessagesActionTypes {
+  GET_MESSAGES_REQUEST = 'GET_MESSAGES_REQUEST',
+  GET_MESSAGES_SUCCESS = 'GET_MESSAGES_SUCCESS',
+  GET_MESSAGES_FAIL = 'GET_MESSAGES_FAIL',
+}
