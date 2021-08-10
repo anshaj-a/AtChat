@@ -1,8 +1,8 @@
-import React from 'react';
-import { timestampToDate } from '../Utilities/Time/TimeFormatter';
-import { useDispatch } from 'react-redux';
-import { SelectConversation } from '../Redux/Actions/Creators/conversation.actions';
-import { IDisplayUserInfo } from '../Interfaces/DisplayUserInfo.interface';
+import React from "react";
+// import { timestampToDate } from "../Utilities/Time/TimeFormatter";
+import { useDispatch } from "react-redux";
+import { SelectConversation } from "../Redux/Actions/Creators/conversation.actions";
+import { IDisplayUserInfo } from "../Interfaces/DisplayUserInfo.interface";
 
 interface RecipientProps {
   id: string | number;
@@ -41,15 +41,15 @@ const Recipient: React.FC<RecipientProps> = ({
   return (
     <div
       onClick={handleClick}
-      className='px-4 py-5 flex justify-between hover:bg-dark-200 cursor-pointer'
+      className="px-4 py-5 flex justify-between hover:bg-dark-200 cursor-pointer"
     >
-      <img className='rounded-full' src={profilePicture} alt={name} />
+      <img className="rounded-full" src={profilePicture} alt={name} />
       <div>
-        <h1 className='text-base'>{name}</h1>
-        <p className='text-xs text-dark-100'>{lastMessage}</p>
+        <h1 className="text-base">{name}</h1>
+        <p className="text-xs text-dark-100">{lastMessage}</p>
       </div>
       <div>
-        <p className='text-xs text-grayLight'>{timestampToDate(timestamp)}</p>
+        <p className="text-xs text-grayLight">{timestamp}</p>
       </div>
     </div>
   );

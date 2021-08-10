@@ -1,12 +1,12 @@
-import React, { useEffect } from 'react';
-import { useDispatch, useSelector } from 'react-redux';
-import ChatMessage, { SentMessage } from '../../../../Components/ChatMessage';
-import { IDisplayUserInfo } from '../../../../Interfaces/DisplayUserInfo.interface';
-import { IMessage } from '../../../../Interfaces/IMessage';
-import { IUserInfo } from '../../../../Interfaces/UserInfo.interface';
-import { GetConversationMessages } from '../../../../Redux/Actions/Creators/conversation.actions';
-import Footer from './Components/Footer';
-import StatusBar from './Components/StatusBar';
+import React, { useEffect } from "react";
+import { useDispatch, useSelector } from "react-redux";
+import ChatMessage, { SentMessage } from "../../../../Components/ChatMessage";
+import { IDisplayUserInfo } from "../../../../Interfaces/DisplayUserInfo.interface";
+import { IMessage } from "../../../../Interfaces/IMessage";
+import { IUserInfo } from "../../../../Interfaces/UserInfo.interface";
+import { GetConversationMessages } from "../../../../Redux/Actions/Creators/conversation.actions";
+import Footer from "./Components/Footer";
+import StatusBar from "./Components/StatusBar";
 
 interface MainProps {}
 
@@ -20,10 +20,10 @@ const Main: React.FC<MainProps> = () => {
     email: null,
     exp: 0,
     iat: 0,
-    id: '',
-    name: '',
+    id: "",
+    name: "",
     profile_picture: null,
-    username: '',
+    username: "",
   };
 
   if (userLogin.userInfo) {
@@ -50,19 +50,19 @@ const Main: React.FC<MainProps> = () => {
   }, [dispatch, id, contactInfo]);
 
   return (
-    <div className='min-h-screen w-full flex flex-col justify-between'>
+    <div className="max-h-screen w-full flex flex-col justify-between">
       <StatusBar
         id={id}
         name={name}
         username={username}
         profile_picture={profile_picture}
       />
-      <div className='flex-1 overflow-auto p-4'>
+      <div className="flex-1 overflow-auto p-4 max-h-screen">
         {loading ? (
-          <h1 className='text-5xl font-bold'>Loading...</h1>
+          <h1 className="text-5xl font-bold">Loading...</h1>
         ) : errors ? (
-          <h1 className='text-5xl font-bold'>
-            {typeof errors === 'string' ? errors : errors[0]}
+          <h1 className="text-5xl font-bold">
+            {typeof errors === "string" ? errors : errors[0]}
           </h1>
         ) : null}
 
@@ -72,7 +72,7 @@ const Main: React.FC<MainProps> = () => {
           return <SentMessage messageInfo={convo} />;
         })}
       </div>
-      <Footer />
+      <Footer name={name} />
     </div>
   );
 };

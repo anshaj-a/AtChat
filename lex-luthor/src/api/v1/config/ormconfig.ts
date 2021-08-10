@@ -7,7 +7,7 @@ export const typeOrmConfig: TypeOrmModuleOptions = {
   host: 'localhost',
   port: 5432,
   username: 'postgres',
-  password: 'fuckoff',
+  password: 'postgres',
   database: 'chatapp',
   entities: ['dist/**/*.entity{.ts,.js}'],
   synchronize: true, // Don't try to do this with our production server.

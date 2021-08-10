@@ -1,10 +1,11 @@
-import React, { useEffect } from 'react';
-import { useDispatch, useSelector } from 'react-redux';
-import Recipient from '../../../../Components/Recipient';
-import { GetUserConversations } from '../../../../Redux/Actions/Creators/conversation.actions';
-import Header from './Components/Header';
-import { IUserInfo } from '../../../../Interfaces/UserInfo.interface';
-import { IConversation } from '../../../../Interfaces/Conversation.interface';
+import React, { useEffect } from "react";
+import { useDispatch, useSelector } from "react-redux";
+import Recipient from "../../../../Components/Recipient";
+import { GetUserConversations } from "../../../../Redux/Actions/Creators/conversation.actions";
+import Header from "./Components/Header";
+import { IUserInfo } from "../../../../Interfaces/UserInfo.interface";
+import { IConversation } from "../../../../Interfaces/Conversation.interface";
+import { timestampToDate } from "src/Utilities/Time/TimeFormatter";
 
 interface SidebarProps {
   convoId?: string;
@@ -38,10 +39,10 @@ const Sidebar: React.FC<SidebarProps> = ({ convoId }) => {
   }, [dispatch, user.id]);
 
   return (
-    <div className='w-3/12 border-r-2 border-dark-200 min-h-screen sm:w-full md:w-3/4 lg:w-2/4 xl:w-2/4 2xl:w-1/3'>
+    <div className="w-3/12 border-r-2 border-dark-200 min-h-screen sm:w-full md:w-3/4 lg:w-2/4 xl:w-2/4 2xl:w-1/3">
       <Header />
-      <div className='pt-6'>
-        {errors && <div className=''>{errors}</div>}
+      <div className="pt-6">
+        {errors && <div className="">{errors}</div>}
         {loading && <div>Loading...</div>}
         {conversations?.map((c: IConversation) => (
           <Recipient
@@ -53,10 +54,10 @@ const Sidebar: React.FC<SidebarProps> = ({ convoId }) => {
             profilePicture={
               c.profilePicture
                 ? c.profilePicture
-                : 'https://via.placeholder.com/56'
+                : "https://via.placeholder.com/56"
             }
-            timestamp={c.timestamp ? c.timestamp : '...'}
-            lastMessage={c.lastMessage ? c.lastMessage : 'Tap to chat'}
+            timestamp={c.timestamp ? timestampToDate(c.timestamp) : "..."}
+            lastMessage={c.lastMessage ? c.lastMessage : "Tap to chat"}
           />
         ))}
       </div>
