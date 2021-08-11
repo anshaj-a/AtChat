@@ -8,6 +8,8 @@ import { GetConversationMessages } from "../../../../Redux/Actions/Creators/conv
 import Footer from "./Components/Footer";
 import StatusBar from "./Components/StatusBar";
 
+import "./main.css";
+
 interface MainProps {}
 
 const Main: React.FC<MainProps> = () => {
@@ -57,7 +59,7 @@ const Main: React.FC<MainProps> = () => {
         username={username}
         profile_picture={profile_picture}
       />
-      <div className="flex-1 overflow-auto p-4 max-h-screen">
+      <div className="flex-1 overflow-auto p-4 max-h-screen" id="main">
         {loading ? (
           <h1 className="text-5xl font-bold">Loading...</h1>
         ) : errors ? (
