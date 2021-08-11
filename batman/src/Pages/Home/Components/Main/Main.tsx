@@ -8,8 +8,6 @@ import { GetConversationMessages } from "../../../../Redux/Actions/Creators/conv
 import Footer from "./Components/Footer";
 import StatusBar from "./Components/StatusBar";
 
-import "./main.css";
-
 interface MainProps {}
 
 const Main: React.FC<MainProps> = () => {
