@@ -1,0 +1,7 @@
+{
+  "dependencies": {
+    "@types/overlayscrollbars": "^1.12.1",
+    "overlayscrollbars": "^1.13.1",
+    "overlayscrollbars-react": "^0.2.3"
+  }
+}
